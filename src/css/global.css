@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL HOSPITAL THEME
+========================= */
+
+:root {
+  --bg: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+
+  --primary: #dc2626;
+  --primary-soft: rgba(220, 38, 38, 0.1);
+
+  --border: #e5e7eb;
+
+  --dark: #0f172a;
+
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  --radius: 10px;
+
+  --font: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f8fafc;
+  overflow-x: hidden;
+}
+
+/* subtle grid depth background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: 
+    radial-gradient(circle at 1px 1px, rgba(220, 38, 38, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+
+  opacity: 0.6;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
